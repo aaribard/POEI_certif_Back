@@ -1,5 +1,6 @@
-DROP TABLE IF EXTIST messages;
-DROP TABLE IF EXTIST canals;
+DROP INDEX IF EXISTS IDX_CANAL_001 ON canals;
+DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS canals;
 
 CREATE TABLE canals (
    idcanal INT PRIMARY KEY AUTO_INCREMENT,
@@ -8,7 +9,7 @@ CREATE TABLE canals (
    isRoot INT DEFAULT 0
 );
 
-CREATE UNIQUE INDEX IDX_CANAL_001  ON CANAL(libelle);
+CREATE UNIQUE INDEX IDX_CANAL_001  ON canals(name);
 
 CREATE TABLE messages (
    idmessage INT PRIMARY KEY AUTO_INCREMENT,
@@ -17,5 +18,5 @@ CREATE TABLE messages (
    dateCreate DATE NOT NULL,
    dateUpdate DATE NOT NULL,
    idcanal INT NOT NULL,
-   CONSTRAINT fk_canal_message_01 FOREIGN KEY (idcanal) REFERENCES CANAL(idcanal)
+   CONSTRAINT fk_canals_message_01 FOREIGN KEY (idcanal) REFERENCES canals(idcanal)
 );
