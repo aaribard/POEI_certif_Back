@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.m2i.slaque.model.Message;
+import fr.m2i.slaque.service.MessageService;
 
 @RestController
 @RequestMapping(path = "/message")

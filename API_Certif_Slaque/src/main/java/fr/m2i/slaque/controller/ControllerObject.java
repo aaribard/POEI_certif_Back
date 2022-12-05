@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.m2i.slaque.service.ServiceInterface;
+
 @RestController
 public abstract class ControllerObject<T> {
 
