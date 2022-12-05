@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import fr.m2i.messagerie.model.Message;
+import fr.m2i.slaque.model.Message;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {

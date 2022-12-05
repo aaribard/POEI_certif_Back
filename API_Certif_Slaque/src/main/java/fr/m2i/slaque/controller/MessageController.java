@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.m2i.messagerie.model.Message;
-import fr.m2i.messagerie.service.MessageService;
+import fr.m2i.slaque.model.Message;
 
 @RestController
 @RequestMapping(path = "/message")
