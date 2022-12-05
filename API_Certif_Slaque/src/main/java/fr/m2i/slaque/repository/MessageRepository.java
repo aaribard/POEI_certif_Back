@@ -11,9 +11,9 @@ import fr.m2i.slaque.model.Message;
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
 
-	@Query("SELECT m FROM Message m WHERE idcanal = ?1")
+	@Query("SELECT m FROM Message m WHERE id_canal = ?1")
 	public List<Message> findByCanal(Long idcanal);
 	
-	@Query("SELECT m FROM Message m WHERE idutilisateur = ?1")
+	@Query("SELECT m FROM Message m WHERE id_utilisateur = ?1")
 	public List<Message> findByUtilisateur(Long idutilisateur);
 }
