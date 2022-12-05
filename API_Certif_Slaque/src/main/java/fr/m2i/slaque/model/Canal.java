@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -34,7 +34,7 @@ public class Canal implements Serializable {
 	private int isroot;
 
     @OneToMany(mappedBy="canal", fetch = FetchType.LAZY)
-    @JsonBackReference
+    @JsonIgnore
     private List<Message> messages  = new ArrayList<Message>();;
 	
 	public Canal() {
