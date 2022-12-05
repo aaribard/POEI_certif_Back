@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -31,7 +31,7 @@ public class Utilisateur implements Serializable {
 	private String login;
 
     @OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)
-    @JsonBackReference
+    @JsonIgnore
 	private List<Message> messages = new ArrayList<Message>();
 	
 	public Utilisateur() {

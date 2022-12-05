@@ -9,7 +9,6 @@ public class CanalService extends ServiceObject<Canal> {
 
 	@Override
 	public void delete(Long id) {
-		System.out.println("Suppression Canal " + id);
 		if (repository.findById(id).get().getIsroot() == 0) repository.deleteById(id);
 	}
 
