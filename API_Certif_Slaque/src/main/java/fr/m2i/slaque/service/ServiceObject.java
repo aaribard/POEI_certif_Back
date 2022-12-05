@@ -17,7 +17,6 @@ public abstract class ServiceObject<T> implements ServiceInterface<T> {
 	}
 	
 	public void save(T t) {
-		System.out.println("Save ---> ok");
 		repository.save(t);
 	}
 	
