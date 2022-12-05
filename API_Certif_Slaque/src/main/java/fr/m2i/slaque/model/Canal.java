@@ -1,4 +1,4 @@
-package fr.m2i.messagerie.model;
+package fr.m2i.slaque.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
