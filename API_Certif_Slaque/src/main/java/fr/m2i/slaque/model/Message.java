@@ -1,6 +1,5 @@
 package fr.m2i.slaque.model;
 
-
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -15,7 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 
 import lombok.Data;
 
@@ -32,19 +31,18 @@ public class Message implements Serializable {
 	@Column(nullable = false, length = 2000)
 	private String corps;
 	
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private Date datecreation;
 	
     @ManyToOne
-    @JoinColumn(name="idcanal", nullable=false, insertable = false, updatable = false)
-    @JsonManagedReference
+    @JoinColumn(name="id_canal", nullable=false)
+    @JsonIncludeProperties(value = {"id"})
 	private Canal canal;
 
     @ManyToOne
-    @JoinColumn(name="idutilisateur", nullable=false, insertable = false, updatable = false)
-    @JsonManagedReference
+    @JoinColumn(name="id_utilisateur", nullable=false)
+    @JsonIncludeProperties(value = {"id"})
     private Utilisateur utilisateur;
-    
 	public Message() {
 		
 	}
