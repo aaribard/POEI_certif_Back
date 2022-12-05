@@ -2,7 +2,7 @@ package fr.m2i.slaque.service;
 
 import org.springframework.stereotype.Service;
 
-import fr.m2i.messagerie.model.Canal;
+import fr.m2i.slaque.model.Canal;
 
 @Service
 public class CanalService extends ServiceObject<Canal> {

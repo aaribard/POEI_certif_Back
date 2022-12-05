@@ -35,7 +35,7 @@ public class Canal implements Serializable {
 
     @OneToMany(mappedBy="canal", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Message> messages  = new ArrayList<Message>();
+    private List<Message> messages  = new ArrayList<Message>();;
 	
 	public Canal() {
 

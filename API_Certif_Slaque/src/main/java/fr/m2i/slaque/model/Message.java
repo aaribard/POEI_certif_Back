@@ -1,9 +1,11 @@
 package fr.m2i.slaque.model;
 
+
 import java.io.Serializable;
+import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,7 +33,7 @@ public class Message implements Serializable {
 	@Column(nullable = false, length = 2000)
 	private String corps;
 	
-	@Column(nullable = true)
+	@Column(nullable = false)
 	private Date datecreation;
 	
     @ManyToOne
@@ -43,13 +45,14 @@ public class Message implements Serializable {
     @JoinColumn(name="id_utilisateur", nullable=false)
     @JsonIncludeProperties(value = {"id"})
     private Utilisateur utilisateur;
+    
 	public Message() {
 		
 	}
 
 	public Message(String corps, Date datecreation, Canal canal) {
 		this.corps = corps;
-		this.datecreation = datecreation;
+		this.datecreation = (Date) Date.from(Instant.now());
 		this.canal = canal;
 	}
 	
