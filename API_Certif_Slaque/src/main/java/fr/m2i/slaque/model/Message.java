@@ -36,12 +36,12 @@ public class Message implements Serializable {
 	@Column(nullable = false)
 	private Date datecreation;
 	
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name="id_canal", nullable=false)
     @JsonIncludeProperties(value = {"id"})
 	private Canal canal;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name="id_utilisateur", nullable=false)
     @JsonIncludeProperties(value = {"id"})
     private Utilisateur utilisateur;
