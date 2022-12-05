@@ -1,4 +1,4 @@
-package fr.m2i.certif;
+package fr.m2i.slaque;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(ApiCertifApplication.class);
+		return application.sources(ApiCertifSlaqueApplication.class);
 	}
 
 }
