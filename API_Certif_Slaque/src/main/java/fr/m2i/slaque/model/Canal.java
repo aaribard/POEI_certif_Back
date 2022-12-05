@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,7 +34,7 @@ public class Canal implements Serializable {
 	@Column(nullable = false, length = 10)
 	private int isroot;
 
-    @OneToMany(mappedBy="canal", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="canal", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JsonIgnore
     private List<Message> messages  = new ArrayList<Message>();;
 	
