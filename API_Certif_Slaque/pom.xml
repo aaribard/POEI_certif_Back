@@ -8,12 +8,12 @@
 		<version>2.7.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>fr.m2i.certif</groupId>
-	<artifactId>API_Certif</artifactId>
+	<groupId>fr.m2i.slaque</groupId>
+	<artifactId>API_Certif_Slaque</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>API_Certif</name>
-	<description>API_Certif</description>
+	<name>API_Certif_Slaque</name>
+	<description>API_Certif_Slaque</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
