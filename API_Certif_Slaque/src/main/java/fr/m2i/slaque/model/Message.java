@@ -45,7 +45,7 @@ public class Message implements Serializable {
 
     @ManyToOne()
     @JoinColumn(name="id_utilisateur", nullable=false)
-    @JsonIncludeProperties(value = {"id"})
+    @JsonIncludeProperties(value = {"id", "login"})
     private Utilisateur utilisateur;
 	
 	@Override
