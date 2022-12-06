@@ -32,7 +32,8 @@ public abstract class ServiceObject<T> implements ServiceInterface<T> {
     	return repository.existsById(id);
     }
 
-    public T findById(Long id) {
+	@SuppressWarnings("unchecked")
+	public T findById(Long id) {
     	return (T) repository.findById(id);
     }
 }

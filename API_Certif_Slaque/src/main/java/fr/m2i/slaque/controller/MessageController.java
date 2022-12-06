@@ -21,7 +21,7 @@ public class MessageController extends ControllerObject<Message> {
 	MessageService ms;
 	
 	@GetMapping(path="/findbycanal", produces={"application/json"})
-	@ResponseStatus(code=HttpStatus.CREATED)	
+	@ResponseStatus(code=HttpStatus.OK)	
 	public List<Message> findByCanal( @RequestParam("id") String id) {
 		return ms.findByCanal(Long.parseLong(id));
 	}
