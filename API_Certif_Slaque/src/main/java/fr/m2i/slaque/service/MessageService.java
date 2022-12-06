@@ -1,5 +1,7 @@
 package fr.m2i.slaque.service;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +22,11 @@ public class MessageService extends ServiceObject<Message> {
 	
 	public List<Message> findByUtilisateur(Long idutilisateur){
 		return mr.findByUtilisateur(idutilisateur);
+	}
+	
+	@Override
+	public void save(Message m) {
+		m.setDatecreation((Date) Date.from(Instant.now()));
+		super.save(m);
 	}
 }
