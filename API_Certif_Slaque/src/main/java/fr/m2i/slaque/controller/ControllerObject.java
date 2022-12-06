@@ -22,30 +22,31 @@ public abstract class ControllerObject<T> {
 	protected ServiceInterface<T> service; 
 	
 	@GetMapping(path="/list", produces={"application/json"})
+	@ResponseStatus(code=HttpStatus.OK)	
 	public List<T> getList() { 
 		return service.getAll();
 	}
 	
 	@PostMapping(path="/save", consumes={"application/json"})
-	@ResponseStatus(code=HttpStatus.CREATED)	
+	@ResponseStatus(code=HttpStatus.CREATED)
 	public void save(@RequestBody T t) {
 		service.save(t);
 	}
 	
 	@DeleteMapping(path="/delete")
-	@ResponseStatus(code=HttpStatus.CREATED)	
+	@ResponseStatus(code=HttpStatus.OK)
 	public void delete( @RequestParam("id") String id) {
 		service.delete(Long.parseLong(id));
 	}
 	
 	@GetMapping(path="/findbyid", produces={"application/json"})
-	@ResponseStatus(code=HttpStatus.CREATED)	
+	@ResponseStatus(code=HttpStatus.OK)	
 	public T findById( @RequestParam("id") String id) {
 		return this.service.findById(Long.parseLong(id));
 	}
 	
 	@PutMapping(path="/edit", consumes={"application/json"})
-	@ResponseStatus(code=HttpStatus.CREATED)	
+	@ResponseStatus(code=HttpStatus.OK)	
 	public void edit(@RequestBody T t) {
 		service.save(t);
 	}
